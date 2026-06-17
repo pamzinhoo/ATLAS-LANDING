@@ -183,7 +183,7 @@ form.addEventListener('submit', async (event)=>{
   try{
     const response = await fetch(API_URL, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payloadFromForm(form))});
     if(!response.ok){let detail='Não foi possível enviar a solicitação.';try{const error=await response.json();detail=error.detail || detail;}catch(_){}throw new Error(detail);}
-    form.reset(); setAlert('ok','Solicitação enviada. Ela já aparece na aba Contratos do painel admin.');
+    form.reset(); setAlert('ok','Solicitação enviada. Em breve, um responsável entrará em contato.');
   }catch(error){
     setAlert('err', error?.message || 'Nao foi possivel enviar sua solicitacao agora. Tente novamente em instantes.');
   }
