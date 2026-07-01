@@ -3,34 +3,235 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATLAS — Plataforma de Gestão Escolar</title>
+<meta name="description" content="ATLAS: plataforma de gestao escolar para comunicacao, secretaria, professores, alunos, responsaveis, cantina, reservas e contratos." />
+<title>ATLAS | Plataforma de Gestão Escolar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f7fb;--ink:#101828;--muted:#667085;--line:#e4e7ec;--card:#ffffff;
-  --navy:#071a33;--navy2:#0b2447;--blue:#2563eb;--blue2:#60a5fa;--soft:#eef4ff;
-  --green:#12b76a;--red:#f04438;--shadow:0 24px 70px rgba(16,24,40,.14);
+  --paper:#f7f5f0;
+  --surface:#ffffff;
+  --ink:#17202a;
+  --muted:#69717c;
+  --line:#dedbd3;
+  --line-strong:#c8c2b7;
+  --blue:#2557a7;
+  --blue-dark:#13356e;
+  --teal:#1f766f;
+  --amber:#b76e24;
+  --green:#21835b;
+  --red:#b42318;
+  --nav:#101820;
+  --shadow:0 22px 55px rgba(23,32,42,.12);
 }
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}a{text-decoration:none;color:inherit}.container{width:min(1180px,92%);margin:auto}.icon{width:22px;height:22px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}.icon-box{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--soft);color:var(--blue)}
-.header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(7,26,51,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.1)}.nav{height:74px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;color:white;font-weight:800;letter-spacing:-.04em;font-size:1.35rem}.brand-mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--blue2));display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,99,235,.35)}.brand-mark svg{width:20px;height:20px}.nav-links{display:flex;gap:30px;list-style:none;color:rgba(255,255,255,.74);font-size:.92rem;font-weight:500}.nav-links a:hover{color:white}.nav-action{background:white;color:var(--navy);padding:12px 18px;border-radius:999px;font-weight:700;font-size:.9rem}.mobile-hide{display:flex}
-.hero{min-height:100vh;padding:140px 0 78px;background:radial-gradient(circle at 75% 20%,rgba(37,99,235,.35),transparent 34%),linear-gradient(135deg,var(--navy),#020817 75%);color:white;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 88%)}.hero-wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);padding:9px 13px;border-radius:999px;color:#c7d7fe;font-size:.82rem;font-weight:700;margin-bottom:24px}.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(18,183,106,.12)}h1{font-size:clamp(2.7rem,6vw,5.4rem);line-height:.98;letter-spacing:-.07em;margin-bottom:24px}.hero p{font-size:1.08rem;line-height:1.75;color:rgba(255,255,255,.68);max-width:640px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}.btn{display:inline-flex;align-items:center;gap:10px;border-radius:14px;padding:15px 20px;font-weight:800;font-size:.95rem;border:1px solid transparent;cursor:pointer}.btn-primary{background:var(--blue);color:white;box-shadow:0 18px 40px rgba(37,99,235,.34)}.btn-primary:hover{background:#1d4ed8;transform:translateY(-1px)}.btn-secondary{border-color:rgba(255,255,255,.18);color:white;background:rgba(255,255,255,.06)}.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:34px;color:rgba(255,255,255,.6);font-size:.86rem}.trust span{display:flex;align-items:center;gap:8px}.check{width:18px;height:18px;border-radius:50%;background:rgba(18,183,106,.16);color:#6ee7b7;display:grid;place-items:center}.check svg{width:12px;height:12px}.dashboard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:26px;padding:14px;box-shadow:0 36px 100px rgba(0,0,0,.35)}.dash-top{height:44px;display:flex;align-items:center;gap:8px;padding:0 12px;border-bottom:1px solid rgba(255,255,255,.08)}.pill-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3)}.dash-body{display:grid;grid-template-columns:170px 1fr;min-height:430px}.dash-side{padding:18px;border-right:1px solid rgba(255,255,255,.08)}.side-item{display:flex;gap:9px;align-items:center;color:rgba(255,255,255,.55);font-size:.78rem;font-weight:700;padding:10px;border-radius:11px;margin-bottom:7px}.side-item.active{background:rgba(37,99,235,.2);color:#bfdbfe}.side-item .mini{width:15px;height:15px;border-radius:5px;background:currentColor;opacity:.62}.dash-main{padding:20px}.dash-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;margin-bottom:18px}.dash-title{font-size:1rem;font-weight:800}.dash-muted{font-size:.78rem;color:rgba(255,255,255,.52);margin-top:5px}.dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}.dash-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:17px;padding:15px}.dash-card b{display:block;font-size:1.35rem;letter-spacing:-.04em}.dash-card span{font-size:.72rem;color:rgba(255,255,255,.52)}.bar{height:8px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden;margin-top:13px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:999px}.list-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:17px;padding:16px}.list-row{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08);padding:12px 0}.list-row:last-child{border-bottom:0}.tag{font-size:.68rem;color:#bfdbfe;background:rgba(37,99,235,.18);padding:6px 8px;border-radius:999px;font-weight:800}
-.section{padding:92px 0}.section-head{max-width:720px;margin-bottom:38px}.label{color:var(--blue);font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}.section h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.05;letter-spacing:-.055em;margin-bottom:14px}.section p.lead{color:var(--muted);line-height:1.75;font-size:1.02rem}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 10px 30px rgba(16,24,40,.04)}.card h3{font-size:1.05rem;margin:18px 0 10px;letter-spacing:-.02em}.card p{color:var(--muted);line-height:1.65;font-size:.93rem}.plans{background:var(--navy);color:white}.plans .lead{color:rgba(255,255,255,.58)!important}.plans .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);color:white}.plans .card p,.plans li{color:rgba(255,255,255,.66)}.price{font-size:2.25rem;font-weight:900;letter-spacing:-.06em;margin:15px 0 4px}.price small{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.58)}.plan-list{list-style:none;margin-top:22px;display:grid;gap:12px}.plan-list li{display:flex;gap:10px;align-items:flex-start;font-size:.9rem}.featured{background:linear-gradient(180deg,#2563eb,#1e40af)!important;border-color:rgba(255,255,255,.22)!important;transform:translateY(-10px)}.featured .icon-box{background:rgba(255,255,255,.14);color:white}.contact-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:start}.contact-panel{position:sticky;top:110px}.points{display:grid;gap:16px;margin-top:26px}.point{display:flex;gap:13px;align-items:flex-start}.point strong{display:block;margin-bottom:4px}.point span{color:var(--muted);font-size:.92rem;line-height:1.55}.form-card{background:white;border:1px solid var(--line);border-radius:28px;padding:32px;box-shadow:var(--shadow)}.form-card h3{font-size:1.45rem;letter-spacing:-.04em;margin-bottom:8px}.form-card>p{color:var(--muted);line-height:1.6;margin-bottom:24px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{margin-bottom:16px}.field label{display:block;font-size:.82rem;font-weight:800;margin-bottom:7px;color:#344054}.field input,.field select,.field textarea{width:100%;border:1px solid #d0d5dd;background:#fff;border-radius:13px;padding:13px 14px;font:inherit;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(37,99,235,.1)}textarea{min-height:106px;resize:vertical}.form-note{font-size:.78rem;color:var(--muted);line-height:1.55;margin:10px 0 16px}.submit{width:100%;justify-content:center;background:var(--navy);color:white;border:0}.submit:disabled{opacity:.62;cursor:not-allowed}.alert{display:none;margin-top:14px;border-radius:14px;padding:13px 14px;font-size:.9rem;font-weight:700}.alert.ok{display:block;background:#ecfdf3;color:#027a48}.alert.err{display:block;background:#fef3f2;color:#b42318}.footer{background:#020817;color:rgba(255,255,255,.52);padding:38px 0}.footer .container{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.reveal{opacity:0;transform:translateY(18px);transition:.55s ease}.reveal.visible{opacity:1;transform:translateY(0)}
-@media(max-width:920px){.hero-wrap,.contact-wrap{grid-template-columns:1fr}.dashboard{display:none}.grid-3{grid-template-columns:1fr}.featured{transform:none}.mobile-hide{display:none}.nav-action{padding:10px 14px}.hero{padding-top:118px}.form-row{grid-template-columns:1fr}.contact-panel{position:static}.dash-body{grid-template-columns:1fr}.dash-side{display:none}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+body.nav-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(1160px,92vw);margin:auto}
+.icon{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.header{position:sticky;top:0;z-index:30;background:rgba(247,245,240,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(23,32,42,.09)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:0;font-size:1.16rem}
+.brand-mark{width:38px;height:38px;border:1px solid var(--ink);background:var(--surface);display:grid;place-items:center;box-shadow:5px 5px 0 #d8d1c3}
+.brand-sub{display:block;color:var(--muted);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none;margin:0;padding:0;color:#3f4852;font-size:.91rem;font-weight:700}
+.nav-links a{position:relative}
+.nav-links a:after{content:"";position:absolute;left:0;right:0;bottom:-9px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:.2s ease}
+.nav-links a:hover:after,.nav-links a.active:after{transform:scaleX(1)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.nav-action,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid transparent;border-radius:8px;font-weight:800;transition:.18s ease;white-space:nowrap}
+.nav-action{background:var(--nav);color:#fff;padding:12px 16px;font-size:.88rem}
+.nav-action:hover,.btn-primary:hover,.submit:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.menu-btn{display:none;width:42px;height:42px;border:1px solid var(--line-strong);background:var(--surface);border-radius:8px;color:var(--ink)}
+.hero{position:relative;min-height:auto;padding:48px 0 28px;background:
+  linear-gradient(90deg,rgba(23,32,42,.055) 1px,transparent 1px),
+  linear-gradient(rgba(23,32,42,.045) 1px,transparent 1px),
+  var(--paper);
+  background-size:44px 44px}
+.hero-wrap{display:grid;grid-template-columns:minmax(0,1fr) 480px;gap:58px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:9px;padding:8px 11px;border:1px solid var(--line-strong);background:rgba(255,255,255,.72);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#35404b}
+.kicker:before{content:"";width:9px;height:9px;background:var(--green);border-radius:50%}
+h1{margin:22px 0 20px;font-size:clamp(2.6rem,5.2vw,4.85rem);line-height:.96;letter-spacing:0;max-width:780px}
+.hero-text{max-width:670px;color:#4b5560;font-size:1.09rem;line-height:1.75}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{padding:14px 18px;font-size:.94rem}
+.btn-primary{background:var(--blue);color:white;box-shadow:0 16px 32px rgba(37,87,167,.22)}
+.btn-secondary{background:rgba(255,255,255,.78);border-color:var(--line-strong);color:var(--ink)}
+.btn-secondary:hover{border-color:var(--ink);transform:translateY(-1px)}
+.proof-row{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:#525b66;font-size:.9rem}
+.proof-row span{display:flex;align-items:center;gap:8px}
+.proof-row b{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#e8f3ee;color:var(--green)}
+.product-shot{background:var(--nav);color:white;border:1px solid #2d3742;box-shadow:14px 14px 0 #d8d1c3;min-height:500px;display:grid;grid-template-rows:auto 1fr}
+.shot-top{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid rgba(255,255,255,.1)}
+.window-dots{display:flex;gap:7px}
+.window-dots span{width:10px;height:10px;border-radius:50%;background:#ffffff55}
+.shot-label{font-size:.74rem;font-weight:800;color:#cad5e2;letter-spacing:.08em;text-transform:uppercase}
+.shot-body{display:grid;grid-template-columns:155px 1fr;min-height:448px}
+.shot-side{border-right:1px solid rgba(255,255,255,.1);padding:18px 14px;background:#0b121a}
+.shot-school{font-size:.8rem;color:#cbd5e1;font-weight:800;margin-bottom:16px}
+.side-item{display:flex;align-items:center;gap:8px;padding:10px;border-radius:6px;color:#9aa7b6;font-size:.78rem;font-weight:700;margin-bottom:4px}
+.side-item.active{background:#1b3355;color:#d9e8ff}
+.side-item span{width:13px;height:13px;border:1px solid currentColor}
+.shot-main{padding:20px}
+.shot-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}
+.shot-head h2{font-size:1.15rem;margin:0 0 5px;letter-spacing:0}
+.shot-head p{margin:0;color:#9aa7b6;font-size:.82rem}
+.status-pill{background:#e8f3ee;color:#145c3f;border:1px solid #a7dbc2;border-radius:999px;font-size:.68rem;font-weight:900;padding:7px 9px;white-space:nowrap}
+.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.metric{background:#121d29;border:1px solid rgba(255,255,255,.08);padding:14px;border-radius:8px}
+.metric b{display:block;font-size:1.38rem;letter-spacing:0;margin-bottom:3px}
+.metric span{color:#9aa7b6;font-size:.72rem}
+.ops-board{display:grid;gap:10px}
+.ops-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;background:#121d29;border:1px solid rgba(255,255,255,.08);padding:12px;border-radius:8px}
+.ops-row strong{display:block;font-size:.84rem;margin-bottom:4px}
+.ops-row small{color:#94a3b8}
+.tag{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:6px 8px;color:#bfdbfe;background:#1d3454;font-size:.68rem;font-weight:900}
+.section{padding:88px 0}
+.section.alt{background:var(--surface);border-block:1px solid var(--line)}
+.section.dark{background:var(--nav);color:white}
+.section-head{max-width:760px;margin-bottom:34px}
+.label{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);font-weight:900;margin-bottom:12px}
+.section.dark .label{color:#8fc7ff}
+.section h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.08;letter-spacing:0;margin:0 0 14px}
+.lead{color:var(--muted);font-size:1rem;line-height:1.74;margin:0}
+.section.dark .lead{color:#b7c2ce}
+.split{display:grid;grid-template-columns:.88fr 1.12fr;gap:46px;align-items:start}
+.audit-list{display:grid;gap:12px}
+.audit-item{display:grid;grid-template-columns:34px 1fr;gap:12px;background:rgba(255,255,255,.72);border:1px solid var(--line);padding:16px;border-radius:8px}
+.audit-item b{display:grid;place-items:center;width:34px;height:34px;background:#e9eef6;color:var(--blue);border-radius:7px}
+.audit-item h3{margin:0 0 5px;font-size:1rem}
+.audit-item p{margin:0;color:var(--muted);line-height:1.58;font-size:.92rem}
+.module-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--surface)}
+.module{min-height:218px;padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.module:nth-child(4n){border-right:0}
+.module:nth-last-child(-n+4){border-bottom:0}
+.module .icon-wrap{width:42px;height:42px;display:grid;place-items:center;background:#edf3f9;color:var(--blue);border-radius:8px;margin-bottom:18px}
+.module h3{margin:0 0 9px;font-size:1rem}
+.module p{margin:0;color:var(--muted);line-height:1.58;font-size:.9rem}
+.workflow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.workflow-step{border:1px solid var(--line);background:rgba(255,255,255,.7);padding:20px;border-radius:8px}
+.workflow-step span{display:inline-flex;margin-bottom:18px;color:var(--amber);font-weight:900}
+.workflow-step h3{margin:0 0 8px;font-size:1rem}
+.workflow-step p{margin:0;color:var(--muted);font-size:.91rem;line-height:1.6}
+.billing-toggle{display:flex;align-items:center;gap:8px;margin:4px 0 28px}
+.toggle-btn{border:1px solid rgba(255,255,255,.18);background:#182433;color:#c9d4df;border-radius:999px;padding:9px 13px;font-weight:800;font-size:.84rem}
+.toggle-btn.active{background:white;color:var(--nav)}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.plan{position:relative;background:#121d29;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:24px}
+.plan.featured{background:#173c74;border-color:#6fa9ef;box-shadow:0 26px 60px rgba(0,0,0,.24)}
+.plan-badge{position:absolute;right:18px;top:18px;background:#fff;color:#173c74;border-radius:999px;padding:6px 9px;font-size:.68rem;font-weight:900}
+.plan h3{font-size:1.25rem;margin:0 0 8px}
+.plan p{color:#b7c2ce;line-height:1.58;margin:0 0 18px;font-size:.9rem}
+.price{font-size:2.32rem;font-weight:900;letter-spacing:0;margin-bottom:5px}
+.price small{font-size:.86rem;color:#b7c2ce;font-weight:700}
+.annual{color:#9fb5cb;font-size:.82rem;margin-bottom:20px}
+.plan-list{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px;color:#d8e0e8}
+.plan-list li{display:flex;gap:10px;align-items:flex-start;font-size:.9rem}
+.plan-list .check{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#dff3ea;color:#116044;flex:0 0 auto;margin-top:1px}
+.choose-plan{width:100%;margin-top:22px;background:white;color:var(--nav);border-color:white}
+.choose-plan:hover{transform:translateY(-1px)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.faq{background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.faq button{width:100%;border:0;background:transparent;display:flex;align-items:center;justify-content:space-between;gap:14px;text-align:left;padding:18px 20px;font-weight:800;color:var(--ink)}
+.faq button svg{transition:.2s ease}
+.faq.open button svg{transform:rotate(180deg)}
+.faq p{display:none;margin:0;padding:0 20px 18px;color:var(--muted);line-height:1.62;font-size:.93rem}
+.faq.open p{display:block}
+.contact-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.contact-panel{position:sticky;top:106px}
+.contact-points{display:grid;gap:14px;margin-top:24px}
+.contact-point{display:flex;gap:12px;align-items:flex-start}
+.contact-point .icon-wrap{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;background:#edf3f9;color:var(--blue);flex:0 0 auto}
+.contact-point strong{display:block;margin-bottom:4px}
+.contact-point span{color:var(--muted);font-size:.92rem;line-height:1.55}
+.form-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:28px;box-shadow:var(--shadow)}
+.form-card h3{font-size:1.36rem;margin:0 0 8px}
+.form-card>p{margin:0 0 22px;color:var(--muted);line-height:1.58}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:15px}
+.field label{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.81rem;font-weight:800;margin-bottom:7px;color:#34404c}
+.field small{font-weight:700;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;border:1px solid #cfc9be;background:#fff;border-radius:7px;padding:13px 13px;color:var(--ink);outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(37,87,167,.12)}
+.field input.invalid,.field select.invalid,.field textarea.invalid{border-color:var(--red);box-shadow:0 0 0 4px rgba(180,35,24,.09)}
+textarea{min-height:112px;resize:vertical}
+.helper{font-size:.78rem;color:var(--muted);line-height:1.5;margin-top:7px}
+.form-note{font-size:.8rem;color:var(--muted);line-height:1.55;margin:8px 0 16px}
+.submit{width:100%;background:var(--nav);color:white;border:0}
+.submit:disabled{opacity:.64;cursor:not-allowed;transform:none}
+.alert{display:none;margin-top:14px;border-radius:7px;padding:13px 14px;font-size:.9rem;font-weight:800}
+.alert.ok{display:block;background:#ecfdf3;color:#027a48}
+.alert.err{display:block;background:#fef3f2;color:#b42318}
+.footer{background:#0b1118;color:#aeb8c3;padding:32px 0}
+.footer .container{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.9rem}
+.footer strong{color:white}
+.reveal{opacity:0;transform:translateY(14px);transition:.5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:1040px){
+  .hero-wrap,.split,.contact-wrap{grid-template-columns:1fr}
+  .product-shot{max-width:620px}
+  .module-grid{grid-template-columns:repeat(2,1fr)}
+  .module:nth-child(2n){border-right:0}
+  .module:nth-child(4n){border-right:1px solid var(--line)}
+  .module:nth-last-child(-n+4){border-bottom:1px solid var(--line)}
+  .module:nth-last-child(-n+2){border-bottom:0}
+  .plans-grid{grid-template-columns:1fr}
+  .contact-panel{position:static}
+}
+@media(max-width:780px){
+  .nav{height:68px}
+  .brand-sub{display:none}
+  .menu-btn{display:inline-grid;place-items:center}
+  .nav-links{position:fixed;left:4vw;right:4vw;top:76px;display:none;flex-direction:column;align-items:stretch;gap:0;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);padding:8px;z-index:40}
+  .nav-open .nav-links{display:flex}
+  .nav-links li a{display:block;padding:14px 12px;border-radius:7px}
+  .nav-links li a:hover{background:#f2f0ea}
+  .nav-links a:after{display:none}
+  .nav-action{display:none}
+  .hero{padding:46px 0 46px;min-height:auto}
+  h1{font-size:clamp(2.3rem,13vw,4rem)}
+  .hero-text{font-size:1rem}
+  .shot-body{grid-template-columns:1fr}
+  .shot-side{display:none}
+  .product-shot{min-height:auto;box-shadow:8px 8px 0 #d8d1c3}
+  .metric-grid,.workflow,.faq-grid,.form-row{grid-template-columns:1fr}
+  .module-grid{display:grid;grid-template-columns:1fr}
+  .module,.module:nth-child(2n),.module:nth-child(4n),.module:nth-last-child(-n+2){border-right:0;border-bottom:1px solid var(--line)}
+  .module:last-child{border-bottom:0}
+  .section{padding:66px 0}
+  .footer .container{display:grid}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{transition:none!important;animation:none!important}
+}
 </style>
 </head>
 <body>
 <header class="header">
   <div class="container nav">
     <a class="brand" href="#top" aria-label="ATLAS">
-      <span class="brand-mark"><svg viewBox="0 0 24 24" class="icon"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 8v8M8.5 10l7 4M15.5 10l-7 4"/></svg></span>
-      ATLAS
+      <span class="brand-mark"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 8v8M8.5 10l7 4M15.5 10l-7 4"/></svg></span>
+      <span>ATLAS<span class="brand-sub">School Hub</span></span>
     </a>
-    <ul class="nav-links mobile-hide">
-      <li><a href="#solucao">Solução</a></li><li><a href="#modulos">Módulos</a></li><li><a href="#planos">Planos</a></li><li><a href="#contratar">Contratar</a></li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#solucao">Solução</a></li>
+      <li><a href="#modulos">Módulos</a></li>
+      <li><a href="#implantacao">Implantação</a></li>
+      <li><a href="#planos">Planos</a></li>
+      <li><a href="#contratar">Contratar</a></li>
     </ul>
-    <a class="nav-action" href="#contratar">Solicitar proposta</a>
+    <div class="nav-actions">
+      <a class="nav-action" href="#contratar">Solicitar proposta</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -38,129 +239,294 @@
 <section class="hero">
   <div class="container hero-wrap">
     <div>
-      <div class="eyebrow"><i></i> Plataforma escolar integrada</div>
-      <h1>Gestão escolar séria, centralizada e pronta para crescer.</h1>
-      <p>O ATLAS reúne comunicação, dados acadêmicos, cantina, documentos, reservas e gestão administrativa em uma única plataforma para escolas públicas e particulares.</p>
+      <div class="kicker">Gestão escolar integrada</div>
+      <h1>A operação escolar inteira em uma única central.</h1>
+      <p class="hero-text">O ATLAS organiza comunicação, secretaria, vida acadêmica, responsáveis, cantina, reservas e contratos em um ambiente único. A proposta é simples: menos planilhas paralelas, menos retrabalho e mais clareza para cada perfil.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="#contratar">Agendar demonstração <svg viewBox="0 0 24 24" class="icon"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-        <a class="btn btn-secondary" href="#planos">Ver modelo comercial</a>
+        <a class="btn btn-primary" href="#contratar">Agendar demonstração <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a class="btn btn-secondary" href="#modulos">Ver módulos</a>
       </div>
-      <div class="trust">
-        <span><b class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></b> Multiusuário</span>
-        <span><b class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></b> Painel administrativo</span>
-        <span><b class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></b> Contratos integrados</span>
+      <div class="proof-row" aria-label="Diferenciais">
+        <span><b><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></b> Perfis por função</span>
+        <span><b><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></b> Fluxos rastreáveis</span>
+        <span><b><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></b> Contratação direta</span>
       </div>
     </div>
-    <div class="dashboard" aria-label="Prévia do painel ATLAS">
-      <div class="dash-top"><span class="pill-dot"></span><span class="pill-dot"></span><span class="pill-dot"></span></div>
-      <div class="dash-body">
-        <aside class="dash-side">
-          <div class="side-item active"><span class="mini"></span> Dashboard</div><div class="side-item"><span class="mini"></span> Alunos</div><div class="side-item"><span class="mini"></span> Comunicados</div><div class="side-item"><span class="mini"></span> Contratos</div><div class="side-item"><span class="mini"></span> Relatórios</div>
+    <div class="product-shot" aria-label="Prévia do painel ATLAS">
+      <div class="shot-top">
+        <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="shot-label">Painel administrativo</div>
+      </div>
+      <div class="shot-body">
+        <aside class="shot-side">
+          <div class="shot-school">Colégio Modelo</div>
+          <div class="side-item active"><span></span> Visão geral</div>
+          <div class="side-item"><span></span> Alunos</div>
+          <div class="side-item"><span></span> Responsáveis</div>
+          <div class="side-item"><span></span> Comunicados</div>
+          <div class="side-item"><span></span> Reservas</div>
+          <div class="side-item"><span></span> Contratos</div>
         </aside>
-        <div class="dash-main">
-          <div class="dash-head"><div><div class="dash-title">Visão geral da escola</div><div class="dash-muted">Resumo operacional em tempo real</div></div><span class="tag">ADMIN</span></div>
-          <div class="dash-grid"><div class="dash-card"><b>842</b><span>alunos ativos</span><div class="bar"><i style="width:82%"></i></div></div><div class="dash-card"><b>96%</b><span>frequência</span><div class="bar"><i style="width:96%"></i></div></div><div class="dash-card"><b>12</b><span>contratos</span><div class="bar"><i style="width:64%"></i></div></div></div>
-          <div class="list-card"><div class="list-row"><span>Colégio interessado</span><span class="tag">Novo contrato</span></div><div class="list-row"><span>Solicitação de demo</span><span class="tag">Pendente</span></div><div class="list-row"><span>Proposta premium</span><span class="tag">Em análise</span></div></div>
+        <div class="shot-main">
+          <div class="shot-head">
+            <div><h2>Operação de hoje</h2><p>Indicadores por secretaria, coordenação e direção.</p></div>
+            <span class="status-pill">AO VIVO</span>
+          </div>
+          <div class="metric-grid">
+            <div class="metric"><b>842</b><span>alunos ativos</span></div>
+            <div class="metric"><b>96%</b><span>frequência média</span></div>
+            <div class="metric"><b>18</b><span>solicitações abertas</span></div>
+          </div>
+          <div class="ops-board">
+            <div class="ops-row"><div><strong>Documento solicitado</strong><small>Secretaria recebeu histórico escolar</small></div><span class="tag">Secretaria</span></div>
+            <div class="ops-row"><div><strong>Comunicado enviado</strong><small>Responsáveis do 9º ano notificados</small></div><span class="tag">Família</span></div>
+            <div class="ops-row"><div><strong>Reserva confirmada</strong><small>Laboratório 2 reservado para quinta-feira</small></div><span class="tag">Patrimônio</span></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="solucao">
-  <div class="container">
-    <div class="section-head reveal"><div class="label">Problema resolvido</div><h2>Menos sistemas soltos. Mais controle para a gestão.</h2><p class="lead">Escolas perdem tempo quando notas, avisos, documentos e processos administrativos ficam espalhados. O ATLAS organiza tudo em uma estrutura única, com perfis separados para admin, direção, professor, aluno e responsável.</p></div>
-    <div class="grid-3">
-      <article class="card reveal"><div class="icon-box"><svg viewBox="0 0 24 24" class="icon"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>Comunicação centralizada</h3><p>Avisos, caixa de entrada, comunicados da coordenação e notificações organizadas por perfil.</p></article>
-      <article class="card reveal"><div class="icon-box"><svg viewBox="0 0 24 24" class="icon"><path d="M4 19V5"/><path d="M8 17V9"/><path d="M12 17V7"/><path d="M16 17v-5"/><path d="M20 17V4"/></svg></div><h3>Dados acadêmicos</h3><p>Notas, frequência, horários, ranking, calendário, documentos e acompanhamento da rotina escolar.</p></article>
-      <article class="card reveal"><div class="icon-box"><svg viewBox="0 0 24 24" class="icon"><path d="M12 3l8 4v6c0 5-3.5 8-8 8s-8-3-8-8V7l8-4z"/><path d="M9 12l2 2 4-5"/></svg></div><h3>Administração rastreável</h3><p>Gestão de pacotes, contratos, patrimônio e módulos extras, tudo em um único painel.</p></article>
+<section class="section alt" id="solucao">
+  <div class="container split">
+    <div class="section-head reveal">
+      <div class="label">Problema resolvido</div>
+      <h2>A escola para de operar em pedaços.</h2>
+      <p class="lead">Quando cada setor usa uma ferramenta diferente, a informação chega tarde e a gestão perde contexto. O ATLAS separa permissões por perfil e mantém a rotina escolar no mesmo lugar: secretaria, professores, alunos, responsáveis e administração.</p>
+    </div>
+    <div class="audit-list">
+      <article class="audit-item reveal"><b>01</b><div><h3>Menos dependência de mensagens soltas</h3><p>Comunicados, avisos e solicitações ficam organizados por turma, perfil e finalidade.</p></div></article>
+      <article class="audit-item reveal"><b>02</b><div><h3>Rotina acadêmica com contexto</h3><p>Notas, frequência, calendário, horários e documentos aparecem em fluxos conectados.</p></div></article>
+      <article class="audit-item reveal"><b>03</b><div><h3>Administração acompanhável</h3><p>Contratos, pacotes, módulos extras, patrimônio e reservas têm histórico e responsáveis claros.</p></div></article>
     </div>
   </div>
 </section>
 
 <section class="section" id="modulos">
   <div class="container">
-    <div class="section-head reveal"><div class="label">Módulos</div><h2>Tudo que sua escola precisa, em um só lugar.</h2><p class="lead">Cada módulo do ATLAS resolve uma necessidade real da rotina escolar, com funcionalidades claras e prontas para uso desde o primeiro dia.</p></div>
-    <div class="grid-3">
-      <article class="card reveal"><div class="icon-box"><svg viewBox="0 0 24 24" class="icon"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div><h3>Secretaria digital</h3><p>Documentos, solicitações, comunicados e organização da vida escolar.</p></article>
-      <article class="card reveal"><div class="icon-box"><svg viewBox="0 0 24 24" class="icon"><path d="M6 2v20M18 2v20M6 8h12M6 16h12"/></svg></div><h3>Cantina e pagamentos</h3><p>Pedido antecipado, controle de saldo e pagamentos via Pix integrados.</p></article>
-      <article class="card reveal"><div class="icon-box"><svg viewBox="0 0 24 24" class="icon"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-8h6v8"/></svg></div><h3>Reservas e patrimônio</h3><p>Quadras, laboratórios, notebooks, tablets, salas e patrimônio escolar.</p></article>
+    <div class="section-head reveal">
+      <div class="label">Módulos do produto</div>
+      <h2>Funcionalidades pensadas para a operação real.</h2>
+      <p class="lead">A landing agora apresenta o ATLAS como sistema de trabalho, não como promessa genérica. Cada módulo mostra uma parte concreta da rotina escolar.</p>
+    </div>
+    <div class="module-grid">
+      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>Secretaria digital</h3><p>Solicitações, documentos, avisos e organização da vida escolar em uma fila única.</p></article>
+      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 19V5"/><path d="M8 17V9"/><path d="M12 17V7"/><path d="M16 17v-5"/><path d="M20 17V4"/></svg></div><h3>Acadêmico</h3><p>Notas, frequência, horários, ranking, calendário e acompanhamento por aluno.</p></article>
+      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></div><h3>Comunicação</h3><p>Mensagens e comunicados segmentados para direção, professores, alunos e responsáveis.</p></article>
+      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M6 2v20M18 2v20M6 8h12M6 16h12"/></svg></div><h3>Cantina</h3><p>Pedido antecipado, saldo, retirada e pagamento Pix integrados ao ambiente escolar.</p></article>
+      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-8h6v8"/></svg></div><h3>Reservas</h3><p>Quadras, laboratórios, notebooks, tablets e salas com agenda e controle de uso.</p></article>
+      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 3l8 4v6c0 5-3.5 8-8 8s-8-3-8-8V7l8-4z"/><path d="M9 12l2 2 4-5"/></svg></div><h3>Permissões</h3><p>Experiências separadas por administrador, direção, professor, aluno e responsável.</p></article>
+      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/></svg></div><h3>Contratos</h3><p>Pacotes comerciais e solicitações de contratação conectados ao time administrativo.</p></article>
+      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-6"/></svg></div><h3>Relatórios</h3><p>Indicadores para decisões de rotina, acompanhamento pedagógico e gestão administrativa.</p></article>
     </div>
   </div>
 </section>
 
-<section class="section plans" id="planos">
+<section class="section alt" id="implantacao">
   <div class="container">
-    <div class="section-head reveal"><div class="label" style="color:#93c5fd">Modelo comercial</div><h2>Planos para cada tamanho de escola.</h2><p class="lead">Escolha o plano ideal para o número de alunos da sua escola. Nossa equipe pode personalizar o pacote conforme os módulos que você precisar.</p></div>
-    <div class="grid-3">
-      <article class="card reveal">
-        <div class="icon-box"><svg viewBox="0 0 24 24" class="icon"><path d="M4 19V5h16v14H4z"/><path d="M8 9h8"/></svg></div>
+    <div class="section-head reveal">
+      <div class="label">Implantação</div>
+      <h2>Do interesse ao uso sem ruído.</h2>
+      <p class="lead">O processo comercial fica mais transparente para quem está avaliando a plataforma e mais organizado para a equipe ATLAS.</p>
+    </div>
+    <div class="workflow">
+      <article class="workflow-step reveal"><span>Passo 1</span><h3>Diagnóstico rápido</h3><p>A escola informa porte, perfil, módulos de interesse e principais dores no formulário.</p></article>
+      <article class="workflow-step reveal"><span>Passo 2</span><h3>Proposta adequada</h3><p>A equipe retorna com plano, escopo e módulos recomendados para aquela operação.</p></article>
+      <article class="workflow-step reveal"><span>Passo 3</span><h3>Ambiente preparado</h3><p>Perfis, permissões e módulos são organizados para a escola começar com clareza.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="planos">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="label">Modelo comercial</div>
+      <h2>Planos claros, sem esconder o tamanho da operação.</h2>
+      <p class="lead">Compare mensal e anual, escolha um plano e leve a seleção direto para o formulário de proposta.</p>
+    </div>
+    <div class="billing-toggle" aria-label="Alternar visualização de preço">
+      <button class="toggle-btn active" type="button" data-billing="monthly">Mensal</button>
+      <button class="toggle-btn" type="button" data-billing="annual">Anual</button>
+    </div>
+    <div class="plans-grid">
+      <article class="plan reveal">
         <h3>Starter</h3>
-        <div class="price">R$ 299<small>/mês</small></div>
+        <p>Para escolas menores que precisam organizar secretaria, comunicação e gestão básica.</p>
+        <div class="price" data-monthly="R$ 299" data-annual="R$ 2.990">R$ 299<small>/mês</small></div>
+        <div class="annual">Equivalente anual: R$ 2.990</div>
         <ul class="plan-list">
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>R$ 2.990 no plano anual</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>Até 300 alunos</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>Até 300 responsáveis</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>Até 30 professores</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>2.048 MB de banco de dados</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Até 300 alunos</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Até 300 responsáveis</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Até 30 professores</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>2.048 MB de banco de dados</li>
         </ul>
+        <button class="btn choose-plan" type="button" data-plan="Starter">Selecionar Starter</button>
       </article>
-      <article class="card featured reveal">
-        <div class="icon-box"><svg viewBox="0 0 24 24" class="icon"><path d="M12 2l3 7h7l-5.5 4.2 2 6.8L12 16l-6.5 4 2-6.8L2 9h7l3-7z"/></svg></div>
+      <article class="plan featured reveal">
+        <span class="plan-badge">Mais procurado</span>
         <h3>Pro</h3>
-        <div class="price">R$ 599<small>/mês</small></div>
+        <p>Para escolas em crescimento que querem operar comunicação, acadêmico e administração juntos.</p>
+        <div class="price" data-monthly="R$ 599" data-annual="R$ 5.990">R$ 599<small>/mês</small></div>
+        <div class="annual">Equivalente anual: R$ 5.990</div>
         <ul class="plan-list">
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>R$ 5.990 no plano anual</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>Até 1.000 alunos</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>Até 1.000 responsáveis</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>Até 100 professores</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>10.240 MB de banco de dados</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Até 1.000 alunos</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Até 1.000 responsáveis</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Até 100 professores</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>10.240 MB de banco de dados</li>
         </ul>
+        <button class="btn choose-plan" type="button" data-plan="Pro">Selecionar Pro</button>
       </article>
-      <article class="card reveal">
-        <div class="icon-box"><svg viewBox="0 0 24 24" class="icon"><path d="M4 7h16v10H4z"/><path d="M8 7V5h8v2M8 17v2h8v-2"/></svg></div>
+      <article class="plan reveal">
         <h3>Premium</h3>
-        <div class="price">R$ 999<small>/mês</small></div>
+        <p>Para redes e operações maiores que precisam de capacidade ampliada e módulos completos.</p>
+        <div class="price" data-monthly="R$ 999" data-annual="R$ 9.990">R$ 999<small>/mês</small></div>
+        <div class="annual">Equivalente anual: R$ 9.990</div>
         <ul class="plan-list">
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>R$ 9.990 no plano anual</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>Até 3.000 alunos</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>Até 3.000 responsáveis</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>Até 250 professores</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" class="icon"><path d="M20 6L9 17l-5-5"/></svg></span>51.200 MB de banco de dados</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Até 3.000 alunos</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Até 3.000 responsáveis</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Até 250 professores</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>51.200 MB de banco de dados</li>
         </ul>
+        <button class="btn choose-plan" type="button" data-plan="Premium">Selecionar Premium</button>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="label">Dúvidas comuns</div>
+      <h2>Respostas rápidas antes da proposta.</h2>
+      <p class="lead">Perguntas que normalmente aparecem quando uma escola está decidindo se vale a pena avançar.</p>
+    </div>
+    <div class="faq-grid">
+      <article class="faq reveal open"><button type="button">O ATLAS serve para escola pública e particular?<svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><p>Sim. O formulário já separa o tipo de escola para a equipe entender o contexto e preparar uma proposta compatível.</p></article>
+      <article class="faq reveal"><button type="button">Posso começar sem escolher o plano?<svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><p>Sim. Selecione "Ainda não sei" e informe a quantidade aproximada de alunos. A equipe recomenda o melhor caminho.</p></article>
+      <article class="faq reveal"><button type="button">Os perfis veem informações diferentes?<svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><p>Sim. A plataforma trabalha com experiências separadas para administração, direção, professores, alunos e responsáveis.</p></article>
+      <article class="faq reveal"><button type="button">O pedido do formulário vai para onde?<svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><p>O envio usa o endpoint público de contratos do ATLAS e encaminha a solicitação para análise administrativa.</p></article>
     </div>
   </div>
 </section>
 
 <section class="section" id="contratar">
   <div class="container contact-wrap">
-    <div class="contact-panel reveal"><div class="label">Contratação</div><h2>Leve o ATLAS para sua escola.</h2><p class="lead">Quando a escola preencher este formulário, as informações serão enviadas para a equipe administrativa do ATLAS.</p><div class="points"><div class="point"><div class="icon-box"><svg viewBox="0 0 24 24" class="icon"><path d="M22 12h-6l-2 3-4-6-2 3H2"/></svg></div><div><strong>Atendimento rápido</strong><span>Conte um pouco sobre sua escola e fale diretamente com nossa equipe.</span></div></div><div class="point"><div class="icon-box"><svg viewBox="0 0 24 24" class="icon"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div><strong>Proposta personalizada</strong><span>Analisamos sua solicitação e retornamos com uma proposta sob medida para sua escola.</span></div></div></div></div>
-    <form class="form-card reveal" id="contractForm">
-      <h3>Solicitar demonstração</h3><p>Preencha os dados da escola. Campos com asterisco são obrigatórios.</p>
-      <div class="form-row"><div class="field"><label for="nome">Nome completo *</label><input id="nome" name="nome" required autocomplete="name" placeholder="Ex: Ana Souza"></div><div class="field"><label for="cargo">Cargo *</label><select id="cargo" name="cargo" required><option value="" disabled selected hidden>Selecione</option><option>Diretor(a)</option><option>Coordenador(a)</option><option>Secretário(a)</option><option>Professor(a)</option><option>Outro</option></select></div></div>
+    <div class="contact-panel reveal">
+      <div class="label">Contratação</div>
+      <h2>Leve o ATLAS para sua escola.</h2>
+      <p class="lead">Preencha os dados essenciais. A seleção de plano pode vir preenchida automaticamente se você usar os botões da seção anterior.</p>
+      <div class="contact-points">
+        <div class="contact-point"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M22 12h-6l-2 3-4-6-2 3H2"/></svg></div><div><strong>Retorno objetivo</strong><span>Quanto mais contexto no formulário, mais precisa fica a primeira conversa.</span></div></div>
+        <div class="contact-point"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div><strong>Proposta personalizada</strong><span>A escola recebe uma recomendação baseada em porte, módulos e prioridade.</span></div></div>
+      </div>
+    </div>
+    <form class="form-card reveal" id="contractForm" novalidate>
+      <h3>Solicitar demonstração</h3>
+      <p>Campos com asterisco são obrigatórios. O formulário valida os dados antes do envio.</p>
+      <div class="form-row">
+        <div class="field"><label for="nome">Nome completo *</label><input id="nome" name="nome" required autocomplete="name" placeholder="Ex: Ana Souza"></div>
+        <div class="field"><label for="cargo">Cargo *</label><select id="cargo" name="cargo" required><option value="" disabled selected hidden>Selecione</option><option>Diretor(a)</option><option>Coordenador(a)</option><option>Secretário(a)</option><option>Professor(a)</option><option>Outro</option></select></div>
+      </div>
       <div class="field"><label for="escola">Nome da escola *</label><input id="escola" name="escola" required placeholder="Ex: Colégio Modelo"></div>
-      <div class="form-row"><div class="field"><label for="email">E-mail *</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="contato@escola.com.br"></div><div class="field"><label for="telefone">Telefone/WhatsApp *</label><input id="telefone" name="telefone" required inputmode="tel" maxlength="15" minlength="10" pattern="[0-9 ()+-]{10,15}" placeholder="(44) 99999-9999"></div></div>
-      <div class="form-row"><div class="field"><label for="tipo_escola">Tipo de escola *</label><select id="tipo_escola" name="tipo_escola" required><option value="" disabled selected hidden>Selecione</option><option>Pública estadual</option><option>Pública municipal</option><option>Particular</option><option>Outro</option></select></div><div class="field"><label for="plano_interesse">Plano de interesse *</label><select id="plano_interesse" name="plano_interesse" required><option value="" disabled selected hidden>Selecione</option><option value="Starter">Starter</option><option value="Pro">Pro</option><option value="Premium">Premium</option><option value="Ainda não sei">Ainda não sei</option></select></div></div>
-      <div class="field"><label for="quantidade_alunos">Quantidade aproximada de alunos</label><input id="quantidade_alunos" name="quantidade_alunos" type="number" min="0" placeholder="Ex: 850"></div>
+      <div class="form-row">
+        <div class="field"><label for="email">E-mail *<small>institucional, se possível</small></label><input id="email" name="email" type="email" required autocomplete="email" placeholder="contato@escola.com.br"></div>
+        <div class="field"><label for="telefone">Telefone/WhatsApp *</label><input id="telefone" name="telefone" required inputmode="tel" maxlength="15" minlength="14" pattern="^\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}$" placeholder="(44) 99999-9999"><div class="helper">Use DDD + número. A máscara é aplicada automaticamente.</div></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="tipo_escola">Tipo de escola *</label><select id="tipo_escola" name="tipo_escola" required><option value="" disabled selected hidden>Selecione</option><option>Pública estadual</option><option>Pública municipal</option><option>Particular</option><option>Outro</option></select></div>
+        <div class="field"><label for="plano_interesse">Plano de interesse *</label><select id="plano_interesse" name="plano_interesse" required><option value="" disabled selected hidden>Selecione</option><option value="Starter">Starter</option><option value="Pro">Pro</option><option value="Premium">Premium</option><option value="Ainda não sei">Ainda não sei</option></select></div>
+      </div>
+      <div class="field"><label for="quantidade_alunos">Quantidade aproximada de alunos<small id="planHint">Ajuda a sugerir o plano</small></label><input id="quantidade_alunos" name="quantidade_alunos" type="number" min="0" placeholder="Ex: 850"></div>
       <div class="field"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" placeholder="Explique rapidamente o que sua escola precisa."></textarea></div>
       <p class="form-note">Ao enviar, a solicitação será encaminhada para análise da equipe administrativa do ATLAS.</p>
-      <button class="btn submit" id="submitBtn" type="submit">Enviar solicitação</button><div id="formAlert" class="alert" role="status"></div>
+      <button class="btn submit" id="submitBtn" type="submit">Enviar solicitação</button>
+      <div id="formAlert" class="alert" role="status" aria-live="polite"></div>
     </form>
   </div>
 </section>
 </main>
-<footer class="footer"><div class="container"><strong>ATLAS — Ambiente Tecnológico de Logística Acadêmica e Serviços</strong><span>Todos os direitos reservados.</span></div></footer>
+
+<footer class="footer">
+  <div class="container">
+    <strong>ATLAS | Ambiente Tecnológico de Logística Acadêmica e Serviços</strong>
+    <span>Todos os direitos reservados.</span>
+  </div>
+</footer>
+
 <script>
 const API_URL = window.ATLAS_CONTRACTS_API_URL || "https://atlas-api-dixg.onrender.com/api/contracts/public";
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+const navAnchors = [...document.querySelectorAll('.nav-links a')];
 const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries)=>{entries.forEach((entry,index)=>{if(entry.isIntersecting){setTimeout(()=>entry.target.classList.add('visible'),index*70);observer.unobserve(entry.target);}})},{threshold:.12});
-reveals.forEach(el=>observer.observe(el));
-
 const form = document.getElementById('contractForm');
 const telefoneInput = document.getElementById('telefone');
+const quantidadeInput = document.getElementById('quantidade_alunos');
+const planoSelect = document.getElementById('plano_interesse');
 const alertBox = document.getElementById('formAlert');
 const submitBtn = document.getElementById('submitBtn');
+const planHint = document.getElementById('planHint');
+
+function closeMenu(){
+  document.body.classList.remove('nav-open');
+  menuBtn?.setAttribute('aria-expanded','false');
+}
+menuBtn?.addEventListener('click', () => {
+  const isOpen = document.body.classList.toggle('nav-open');
+  menuBtn.setAttribute('aria-expanded', String(isOpen));
+});
+navAnchors.forEach(anchor => anchor.addEventListener('click', closeMenu));
+
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.14});
+  reveals.forEach(el => observer.observe(el));
+} else {
+  reveals.forEach(el => el.classList.add('visible'));
+}
+
+const sections = navAnchors.map(anchor => document.querySelector(anchor.getAttribute('href'))).filter(Boolean);
+if ('IntersectionObserver' in window) {
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navAnchors.forEach(anchor => anchor.classList.toggle('active', anchor.getAttribute('href') === `#${entry.target.id}`));
+      }
+    });
+  }, {rootMargin:'-42% 0px -52% 0px', threshold:0});
+  sections.forEach(section => navObserver.observe(section));
+}
+
+document.querySelectorAll('.toggle-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const billing = button.dataset.billing;
+    document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.toggle('active', btn === button));
+    document.querySelectorAll('.price').forEach(price => {
+      price.innerHTML = `${price.dataset[billing]}<small>${billing === 'monthly' ? '/mês' : '/ano'}</small>`;
+    });
+  });
+});
+
+document.querySelectorAll('.choose-plan').forEach(button => {
+  button.addEventListener('click', () => {
+    planoSelect.value = button.dataset.plan;
+    clearInvalid(planoSelect);
+    document.getElementById('contratar').scrollIntoView({behavior:prefersReducedMotion ? 'auto' : 'smooth'});
+    setTimeout(() => document.getElementById('nome').focus({preventScroll:true}), prefersReducedMotion ? 0 : 450);
+  });
+});
+
+document.querySelectorAll('.faq button').forEach(button => {
+  button.addEventListener('click', () => button.closest('.faq').classList.toggle('open'));
+});
 
 telefoneInput.addEventListener('input', () => {
   let value = telefoneInput.value.replace(/\D/g, '').slice(0, 11);
@@ -174,20 +540,81 @@ telefoneInput.addEventListener('input', () => {
     value = value.replace(/^(\d{0,2})/, '($1');
   }
   telefoneInput.value = value;
+  clearInvalid(telefoneInput);
 });
-function setAlert(type,message){alertBox.className = 'alert ' + type;alertBox.textContent = message;}
-function payloadFromForm(formEl){const data = Object.fromEntries(new FormData(formEl).entries());data.quantidade_alunos = data.quantidade_alunos ? Number(data.quantidade_alunos) : null;return data;}
-form.addEventListener('submit', async (event)=>{
-  event.preventDefault();
-  submitBtn.disabled = true; submitBtn.textContent = 'Enviando...'; alertBox.className = 'alert'; alertBox.textContent = '';
-  try{
-    const response = await fetch(API_URL, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payloadFromForm(form))});
-    if(!response.ok){let detail='Não foi possível enviar a solicitação.';try{const error=await response.json();detail=error.detail || detail;}catch(_){}throw new Error(detail);}
-    form.reset(); setAlert('ok','Solicitação enviada. Em breve, um responsável entrará em contato.');
-  }catch(error){
-    setAlert('err', error?.message || 'Nao foi possivel enviar sua solicitacao agora. Tente novamente em instantes.');
+
+quantidadeInput.addEventListener('input', () => {
+  const alunos = Number(quantidadeInput.value);
+  if (!alunos) {
+    planHint.textContent = 'Ajuda a sugerir o plano';
+    return;
   }
-  finally{submitBtn.disabled = false; submitBtn.textContent = 'Enviar solicitação';}
+  const suggested = alunos <= 300 ? 'Starter' : alunos <= 1000 ? 'Pro' : 'Premium';
+  planHint.textContent = `Sugestão: ${suggested}`;
+  if (!planoSelect.value || planoSelect.value === 'Ainda não sei') {
+    planoSelect.value = suggested;
+  }
+});
+
+form.querySelectorAll('input, select, textarea').forEach(field => {
+  field.addEventListener('input', () => clearInvalid(field));
+  field.addEventListener('change', () => clearInvalid(field));
+});
+
+function clearInvalid(field){
+  field.classList.remove('invalid');
+}
+function setAlert(type,message){
+  alertBox.className = 'alert ' + type;
+  alertBox.textContent = message;
+}
+function payloadFromForm(formEl){
+  const data = Object.fromEntries(new FormData(formEl).entries());
+  data.quantidade_alunos = data.quantidade_alunos ? Number(data.quantidade_alunos) : null;
+  return data;
+}
+function validateForm(){
+  const fields = [...form.querySelectorAll('[required]')];
+  const invalidField = fields.find(field => !field.checkValidity());
+  fields.forEach(field => field.classList.toggle('invalid', !field.checkValidity()));
+  if (invalidField) {
+    invalidField.focus();
+    setAlert('err','Revise os campos obrigatórios destacados antes de enviar.');
+    return false;
+  }
+  return true;
+}
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  if (!validateForm()) return;
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando...';
+  alertBox.className = 'alert';
+  alertBox.textContent = '';
+  try {
+    const response = await fetch(API_URL, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payloadFromForm(form))
+    });
+    if (!response.ok) {
+      let detail = 'Não foi possível enviar a solicitação.';
+      try {
+        const error = await response.json();
+        detail = error.detail || detail;
+      } catch (_) {}
+      throw new Error(detail);
+    }
+    form.reset();
+    planHint.textContent = 'Ajuda a sugerir o plano';
+    setAlert('ok','Solicitação enviada. Em breve, um responsável entrará em contato.');
+  } catch (error) {
+    setAlert('err', error?.message || 'Não foi possível enviar sua solicitação agora. Tente novamente em instantes.');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Enviar solicitação';
+  }
 });
 </script>
 </body>
