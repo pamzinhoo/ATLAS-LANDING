@@ -112,10 +112,11 @@ body[data-theme="dark"] .theme-toggle .moon{display:none}
   background-size:auto,46px 46px,46px 46px}
 .hero:after{content:"";position:absolute;inset:auto 0 0;z-index:-1;height:42%;background:linear-gradient(180deg,transparent,var(--surface));pointer-events:none}
 .hero-wrap{display:grid;grid-template-columns:minmax(0,1fr) 470px;gap:58px;align-items:center}
+.hero-copy{max-width:720px}
 .kicker{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid color-mix(in srgb,var(--line-strong) 70%,transparent);background:color-mix(in srgb,var(--surface) 86%,transparent);border-radius:999px;box-shadow:var(--shadow-soft);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--nav-link)}
 .kicker:before{content:"";width:9px;height:9px;background:var(--green);border-radius:50%}
 h1{margin:20px 0 18px;font-size:clamp(2.48rem,4.7vw,4.42rem);line-height:1;letter-spacing:0;max-width:730px;text-wrap:balance}
-.hero-text{max-width:640px;color:var(--muted);font-size:1.08rem;line-height:1.72}
+.hero-text{max-width:625px;color:var(--muted);font-size:1.07rem;line-height:1.7}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .btn{padding:14px 18px;font-size:.94rem}
 .btn-primary{background:linear-gradient(135deg,var(--blue),var(--teal));color:white;box-shadow:0 18px 38px color-mix(in srgb,var(--blue) 28%,transparent)}
@@ -178,6 +179,7 @@ h1{margin:20px 0 18px;font-size:clamp(2.48rem,4.7vw,4.42rem);line-height:1;lette
 .audit-item p{margin:0;color:var(--muted);line-height:1.58;font-size:.92rem}
 .module-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;border:0;background:transparent;border-radius:0;overflow:visible;box-shadow:none}
 .module{min-height:222px;padding:24px;border:1px solid var(--line);border-radius:var(--radius-lg);background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface-soft) 84%,var(--surface)));box-shadow:var(--shadow-soft);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.module:nth-child(1),.module:nth-child(2){grid-column:span 2;min-height:190px}
 .module:hover{border-color:var(--line-strong);box-shadow:var(--shadow);transform:translateY(-3px)}
 .module:nth-child(4n){border-right:1px solid var(--line)}
 .module:nth-last-child(-n+4){border-bottom:1px solid var(--line)}
@@ -213,27 +215,28 @@ h1{margin:20px 0 18px;font-size:clamp(2.48rem,4.7vw,4.42rem);line-height:1;lette
 .faq.open button svg{transform:rotate(180deg)}
 .faq p{display:none;margin:0;padding:0 20px 18px;color:var(--muted);line-height:1.62;font-size:.93rem}
 .faq.open p{display:block}
-.contact-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.contact-wrap{display:grid;grid-template-columns:.86fr 1.14fr;gap:54px;align-items:start}
 .contact-panel{position:sticky;top:106px}
-.contact-points{display:grid;gap:14px;margin-top:24px}
-.contact-point{display:flex;gap:12px;align-items:flex-start}
+.contact-points{display:grid;gap:12px;margin-top:22px}
+.contact-point{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 65%,transparent)}
+.contact-point:last-child{border-bottom:0}
 .contact-point .icon-wrap{width:40px;height:40px;border-radius:var(--radius-sm);display:grid;place-items:center;background:var(--surface-soft);color:var(--blue);flex:0 0 auto}
 .contact-point strong{display:block;margin-bottom:4px}
 .contact-point span{color:var(--muted);font-size:.92rem;line-height:1.55}
-.form-card{background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface-soft) 82%,var(--surface)));border:1px solid var(--line);border-radius:var(--radius-xl);padding:30px;box-shadow:var(--shadow)}
-.form-card h3{font-size:1.36rem;margin:0 0 8px}
-.form-card>p{margin:0 0 22px;color:var(--muted);line-height:1.58}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.field{margin-bottom:15px}
+.form-card{background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface-soft) 82%,var(--surface)));border:1px solid var(--line);border-radius:var(--radius-xl);padding:26px;box-shadow:var(--shadow)}
+.form-card h3{font-size:1.28rem;margin:0 0 6px}
+.form-card>p{margin:0 0 18px;color:var(--muted);line-height:1.55;font-size:.92rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{margin-bottom:12px}
 .field label{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.81rem;font-weight:800;margin-bottom:7px;color:var(--nav-link)}
 .field small{font-weight:700;color:var(--muted)}
-.field input,.field select,.field textarea{width:100%;border:1px solid color-mix(in srgb,var(--line-strong) 82%,transparent);background:color-mix(in srgb,var(--surface-soft) 86%,var(--surface));border-radius:var(--radius-sm);padding:13px 13px;color:var(--ink);outline:none}
+.field input,.field select,.field textarea{width:100%;border:1px solid color-mix(in srgb,var(--line-strong) 82%,transparent);background:color-mix(in srgb,var(--surface-soft) 86%,var(--surface));border-radius:var(--radius-sm);padding:11px 12px;color:var(--ink);outline:none}
 .field input:hover,.field select:hover,.field textarea:hover{border-color:var(--line-strong)}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(37,87,167,.12)}
 .field input.invalid,.field select.invalid,.field textarea.invalid{border-color:var(--red);box-shadow:0 0 0 4px rgba(180,35,24,.09)}
-textarea{min-height:112px;resize:vertical}
+textarea{min-height:86px;resize:vertical}
 .helper{font-size:.78rem;color:var(--muted);line-height:1.5;margin-top:7px}
-.form-note{font-size:.8rem;color:var(--muted);line-height:1.55;margin:8px 0 16px}
+.form-note{font-size:.78rem;color:var(--muted);line-height:1.5;margin:4px 0 14px}
 .submit{width:100%;background:var(--nav);color:white;border:0}
 .submit:disabled{opacity:.64;cursor:not-allowed;transform:none}
 .alert{display:none;margin-top:14px;border-radius:var(--radius-sm);padding:13px 14px;font-size:.9rem;font-weight:800}
@@ -280,6 +283,7 @@ textarea{min-height:112px;resize:vertical}
   .metric span{font-size:.64rem}
   .module-grid{display:grid;grid-template-columns:1fr}
   .module,.module:nth-child(2n),.module:nth-child(4n),.module:nth-last-child(-n+2){border:1px solid var(--line)}
+  .module:nth-child(1),.module:nth-child(2){grid-column:auto;min-height:222px}
   .section{padding:66px 0}
   .footer .container{display:grid}
 }
@@ -344,10 +348,10 @@ textarea{min-height:112px;resize:vertical}
 <main id="top">
 <section class="hero">
   <div class="container hero-wrap">
-    <div>
-      <div class="kicker">Gestão escolar integrada</div>
-      <h1>Uma central de trabalho para escolas bem organizadas.</h1>
-      <p class="hero-text">O ATLAS School Hub reúne secretaria, comunicação, responsáveis, vida acadêmica, reservas, contratos, financeiro e administração em um fluxo único. Cada perfil acessa o que precisa, sem depender de planilhas paralelas ou mensagens perdidas.</p>
+    <div class="hero-copy">
+      <div class="kicker">ATLAS School Hub</div>
+      <h1>Gestão escolar com contexto em um só lugar.</h1>
+      <p class="hero-text">O ATLAS organiza o trabalho de direção, coordenação e secretaria em uma plataforma clara. Solicitações, comunicados, vida acadêmica, reservas, contratos e financeiro deixam de ficar espalhados entre planilhas e conversas.</p>
       <div class="actions">
         <a class="btn btn-primary" href="#contratar">Agendar demonstração <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
         <a class="btn btn-secondary" href="#modulos">Conhecer módulos</a>
@@ -355,7 +359,7 @@ textarea{min-height:112px;resize:vertical}
       <div class="proof-row" aria-label="Diferenciais">
         <span><b><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></b> Perfis por função</span>
         <span><b><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></b> Rotinas rastreáveis</span>
-        <span><b><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></b> Implantação assistida</span>
+        <span><b><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></b> Proposta por porte</span>
       </div>
     </div>
     <div class="product-shot" aria-label="Prévia do painel ATLAS">
@@ -375,8 +379,8 @@ textarea{min-height:112px;resize:vertical}
         </aside>
         <div class="shot-main">
           <div class="shot-head">
-            <div><h2>Operação de hoje</h2><p>Resumo para direção, coordenação e secretaria.</p></div>
-            <span class="status-pill">Atualizado</span>
+            <div><h2>Operação de hoje</h2><p>Resumo compartilhado pela equipe escolar.</p></div>
+            <span class="status-pill">10:42</span>
           </div>
           <div class="metric-grid">
             <div class="metric"><b>842</b><span>alunos ativos</span></div>
@@ -385,18 +389,18 @@ textarea{min-height:112px;resize:vertical}
           </div>
           <div class="shot-insights">
             <div class="mini-chart" aria-label="Atendimentos da semana">
-              <div class="mini-chart-head"><span>Atendimentos</span><small>7 dias</small></div>
+              <div class="mini-chart-head"><span>Demandas</span><small>7 dias</small></div>
               <div class="chart-bars" aria-hidden="true"><span style="height:42%"></span><span style="height:58%"></span><span style="height:47%"></span><span style="height:72%"></span><span style="height:64%"></span><span style="height:83%"></span><span style="height:69%"></span></div>
             </div>
             <div class="owner-card">
-              <strong>Responsáveis internos</strong>
+              <strong>Equipe envolvida</strong>
               <div class="owner-stack" aria-hidden="true"><span class="avatar">DR</span><span class="avatar">CO</span><span class="avatar">SE</span></div>
-              <small>3 setores acompanharam as pendências de hoje.</small>
+              <small>Direção, coordenação e secretaria no mesmo fluxo.</small>
             </div>
           </div>
           <div class="ops-board">
-            <div class="ops-row"><div><strong>Documento solicitado</strong><small>Histórico escolar encaminhado à secretaria</small></div><span class="tag">Secretaria</span></div>
-            <div class="ops-row"><div><strong>Comunicado enviado</strong><small>Responsáveis do 9º ano notificados</small></div><span class="tag">Família</span></div>
+            <div class="ops-row"><div><strong>Documento solicitado</strong><small>Histórico escolar em análise pela secretaria</small></div><span class="tag">Secretaria</span></div>
+            <div class="ops-row"><div><strong>Comunicado enviado</strong><small>Responsáveis do 9º ano já notificados</small></div><span class="tag">Família</span></div>
           </div>
         </div>
       </div>
@@ -408,13 +412,13 @@ textarea{min-height:112px;resize:vertical}
   <div class="container split">
     <div class="section-head reveal">
       <div class="label">Por que centralizar</div>
-      <h2>Menos sistemas paralelos. Mais contexto para decidir.</h2>
-      <p class="lead">Quando secretaria, coordenação, professores e responsáveis trabalham em canais separados, a gestão perde histórico e prioridade. O ATLAS organiza a rotina escolar em um ambiente único, com permissões por perfil e informações fáceis de acompanhar.</p>
+      <h2>A gestão perde força quando a rotina fica espalhada.</h2>
+      <p class="lead">O ATLAS aproxima setores que costumam trabalhar separados. A direção acompanha prioridades, a secretaria mantém histórico, e cada perfil acessa apenas o que precisa para agir.</p>
     </div>
     <div class="audit-list">
-      <article class="audit-item reveal"><b>01</b><div><h3>Comunicação com histórico</h3><p>Avisos, solicitações e comunicados ficam associados a turmas, perfis e responsáveis.</p></div></article>
-      <article class="audit-item reveal"><b>02</b><div><h3>Vida acadêmica conectada</h3><p>Notas, frequência, calendário, horários e documentos aparecem no mesmo fluxo de acompanhamento.</p></div></article>
-      <article class="audit-item reveal"><b>03</b><div><h3>Administração visível</h3><p>Contratos, financeiro, reservas e patrimônio passam a ter dono, prazo e registro.</p></div></article>
+      <article class="audit-item reveal"><b>01</b><div><h3>Histórico preservado</h3><p>Solicitações, avisos e documentos deixam de depender da memória de cada setor.</p></div></article>
+      <article class="audit-item reveal"><b>02</b><div><h3>Rotina mais previsível</h3><p>Calendário, frequência, horários e comunicados ganham contexto para acompanhamento.</p></div></article>
+      <article class="audit-item reveal"><b>03</b><div><h3>Responsabilidade clara</h3><p>Contratos, reservas e financeiro passam a ter status, dono e registro de andamento.</p></div></article>
     </div>
   </div>
 </section>
@@ -423,13 +427,13 @@ textarea{min-height:112px;resize:vertical}
   <div class="container">
     <div class="section-head reveal">
       <div class="label">Módulos do produto</div>
-      <h2>O essencial da escola, organizado por área.</h2>
-      <p class="lead">Cada módulo resolve uma parte da rotina sem isolar a informação. O resultado é uma operação mais simples de acompanhar e mais consistente para todos os perfis.</p>
+      <h2>Módulos que acompanham o dia a dia da escola.</h2>
+      <p class="lead">A plataforma cobre áreas administrativas e acadêmicas sem transformar cada necessidade em uma ferramenta separada.</p>
     </div>
     <div class="module-grid">
-      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>Secretaria</h3><p>Solicitações, documentos e atendimentos organizados em filas claras.</p></article>
-      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 19V5"/><path d="M8 17V9"/><path d="M12 17V7"/><path d="M16 17v-5"/><path d="M20 17V4"/></svg></div><h3>Vida acadêmica</h3><p>Notas, frequência, horários e calendário com leitura por aluno e turma.</p></article>
-      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></div><h3>Comunicação</h3><p>Mensagens e comunicados segmentados para escola, turmas e responsáveis.</p></article>
+      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>Secretaria</h3><p>Atendimentos, documentos e solicitações com status claro para quem acompanha e para quem executa.</p></article>
+      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 19V5"/><path d="M8 17V9"/><path d="M12 17V7"/><path d="M16 17v-5"/><path d="M20 17V4"/></svg></div><h3>Vida acadêmica</h3><p>Notas, frequência, horários e calendário conectados ao acompanhamento de alunos e turmas.</p></article>
+      <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></div><h3>Comunicação</h3><p>Comunicados segmentados para escola, turmas, responsáveis e perfis internos.</p></article>
       <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M6 2v20M18 2v20M6 8h12M6 16h12"/></svg></div><h3>Cantina</h3><p>Pedidos, saldo e retirada conectados ao cotidiano dos alunos.</p></article>
       <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-8h6v8"/></svg></div><h3>Reservas</h3><p>Ambientes, equipamentos e recursos com agenda e controle de uso.</p></article>
       <article class="module reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 3l8 4v6c0 5-3.5 8-8 8s-8-3-8-8V7l8-4z"/><path d="M9 12l2 2 4-5"/></svg></div><h3>Permissões</h3><p>Acessos separados para direção, secretaria, professores, alunos e famílias.</p></article>
@@ -443,13 +447,13 @@ textarea{min-height:112px;resize:vertical}
   <div class="container">
     <div class="section-head reveal">
       <div class="label">Implantação</div>
-      <h2>Um caminho simples até o primeiro uso.</h2>
-      <p class="lead">A contratação começa com entendimento do cenário da escola. A partir disso, a equipe orienta plano, escopo e módulos necessários para iniciar com segurança.</p>
+      <h2>Da conversa inicial ao ambiente configurado.</h2>
+      <p class="lead">A escola não precisa chegar com tudo definido. O processo começa pelo cenário atual e avança para uma proposta compatível com porte, prioridades e módulos necessários.</p>
     </div>
     <div class="workflow">
-      <article class="workflow-step reveal"><span>Passo 1</span><h3>Mapeamento</h3><p>A escola informa porte, módulos desejados e principais rotinas que precisam de organização.</p></article>
-      <article class="workflow-step reveal"><span>Passo 2</span><h3>Proposta</h3><p>O escopo é apresentado com plano, capacidade e módulos recomendados para o momento da instituição.</p></article>
-      <article class="workflow-step reveal"><span>Passo 3</span><h3>Preparação</h3><p>Perfis, permissões e áreas iniciais são definidos para a equipe começar com clareza.</p></article>
+      <article class="workflow-step reveal"><span>Passo 1</span><h3>Entendimento</h3><p>A escola informa porte, responsáveis pela decisão e rotinas que mais precisam de organização.</p></article>
+      <article class="workflow-step reveal"><span>Passo 2</span><h3>Recomendação</h3><p>O escopo sugerido considera plano, capacidade e módulos adequados para o momento da instituição.</p></article>
+      <article class="workflow-step reveal"><span>Passo 3</span><h3>Configuração</h3><p>Perfis, permissões e áreas iniciais são preparados para começar com uma operação coerente.</p></article>
     </div>
   </div>
 </section>
@@ -530,16 +534,16 @@ textarea{min-height:112px;resize:vertical}
   <div class="container contact-wrap">
     <div class="contact-panel reveal">
       <div class="label">Contratação</div>
-      <h2>Converse sobre o cenário da sua escola.</h2>
-      <p class="lead">Envie as informações principais para receber uma proposta alinhada ao porte, à rotina e aos módulos mais importantes para a instituição.</p>
+      <h2>Receba uma proposta para a sua operação.</h2>
+      <p class="lead">Compartilhe o contexto da escola. A equipe retorna com uma indicação de plano, módulos e próximos passos.</p>
       <div class="contact-points">
         <div class="contact-point"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M22 12h-6l-2 3-4-6-2 3H2"/></svg></div><div><strong>Retorno com contexto</strong><span>As respostas ajudam a entender prioridade, porte e momento da escola.</span></div></div>
         <div class="contact-point"><div class="icon-wrap"><svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div><strong>Indicação de módulos</strong><span>A proposta considera o que faz sentido para começar sem excesso.</span></div></div>
       </div>
     </div>
     <form class="form-card reveal" id="contractForm" novalidate>
-      <h3>Solicitar demonstração</h3>
-      <p>Informe os dados essenciais para que a equipe prepare o melhor encaminhamento.</p>
+      <h3>Fale com o time ATLAS</h3>
+      <p>Alguns dados bastam para entender o porte da escola e preparar um retorno útil.</p>
       <div class="form-row">
         <div class="field"><label for="nome">Nome completo *</label><input id="nome" name="nome" required autocomplete="name" placeholder="Ex: Ana Souza"></div>
         <div class="field"><label for="cargo">Cargo *</label><select id="cargo" name="cargo" required><option value="" disabled selected hidden>Selecione</option><option>Diretor(a)</option><option>Coordenador(a)</option><option>Secretário(a)</option><option>Professor(a)</option><option>Outro</option></select></div>
